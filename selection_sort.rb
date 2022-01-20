@@ -24,3 +24,36 @@ def selection_sort(arr)
 end
 
 print selection_sort([12,3,5,6,7,8])
+
+#selection sort swapping way
+
+def selection_sort_swapping(arr)
+  
+  arr.each_with_index do |a, i|
+    smallest_index = i
+    smallest_item = a
+    (i..arr.length - 1).each do |b|
+      if arr[b] < smallest_item
+        smallest_index = b
+        smallest_item = arr[b]
+      end
+    end
+    
+    
+    #now lets swap them
+    #small visualizer
+    puts i
+    arr[i] = smallest_item
+    puts smallest_item
+    arr[smallest_index] = a
+    puts smallest_index
+    print arr 
+    puts "\n -----"
+  end
+  
+  print arr
+
+
+end
+
+print selection_sort_swapping([12,3,5,6,7,8])
